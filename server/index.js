@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors());
 
 // Connect to MongoDB
-connectToMongo();
+// connectToMongo();
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
