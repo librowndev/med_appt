@@ -7,7 +7,7 @@ const initSpeciality = [
     'Dentist', 'Gynecologist/obstetrician', 'General Physician', 'Dermatologist', 'Ear-nose-throat (ent) Specialist', 'Homeopath', 'Ayurveda'
 ]
 
-const FindDoctorSearchIC = () => {
+const FindDoctorSearchIC = ({ onSearch }) => {
     const [doctorResultHidden, setDoctorResultHidden] = useState(true);
     const [searchDoctor, setSearchDoctor] = useState('');
     const [specialities, setSpecialities] = useState(initSpeciality);
@@ -15,15 +15,19 @@ const FindDoctorSearchIC = () => {
     const handleDoctorSelect = (speciality) => {
         setSearchDoctor(speciality);
         setDoctorResultHidden(true);
-        navigate(`/instant-consultation?speciality=${speciality}`);
-        window.location.reload();
+        navigate(`/search/doctors?speciality=${speciality}`);
+        if (onSearch) {
+            onSearch(speciality);
+        }
     }
     return (
         <div className='finddoctor'>
             <center>
                 <h1>Find a doctor and Consult instantly</h1>
-                <div>               <i style={{color:'#000000',fontSize:'20rem'}} className="fa fa-user-md"></i>
-</div>                <div className="home-search-container"  style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                <div>
+                    <i style={{color:'#000000',fontSize:'5rem'}} className="fa fa-user-md"></i>
+                </div>
+                <div className="home-search-container"  style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                     <div className="doctor-search-box">
                     {/* <p>Perform a search to see the results.</p> */}
 

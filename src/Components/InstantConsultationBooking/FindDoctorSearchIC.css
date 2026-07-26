@@ -74,12 +74,11 @@
     display: flex;
     align-items: center;
     width: 430px;
-    position: absolute;
+    position: relative;
     margin-top: 25px;
     margin-bottom: 20px;
     box-shadow: rgba(0, 0, 0,.1) 0 - 1px 0 0 inset;
     border-radius: 5px;
-    height: 100vh;
 }
 
 .doctor-search-box>img {
@@ -114,7 +113,7 @@
 }
 .search-doctor-input-results {
     position: absolute;
-    top: 55%;
+    top: 40px;
     left: 0;
     width: 100%;
     z-index: 5;

@@ -66,6 +66,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
           }
           modal
           open={showModal}
+          onOpen={() => setShowModal(true)}
           onClose={() => setShowModal(false)}
         >
           {(close) => (
